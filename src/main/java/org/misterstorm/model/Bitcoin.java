@@ -3,6 +3,8 @@ package org.misterstorm.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
+
 public class Bitcoin {
 
 	private Long id;
@@ -33,6 +35,5 @@ public class Bitcoin {
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
-	
 	
 }
