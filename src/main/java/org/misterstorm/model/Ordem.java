@@ -18,7 +18,7 @@ public class Ordem extends PanacheEntityBase {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private BigDecimal preço;
+	private Double preco;
 	
 	private String tipo;
 	
@@ -37,12 +37,12 @@ public class Ordem extends PanacheEntityBase {
 		this.id = id;
 	}
 
-	public BigDecimal getPreço() {
-		return preço;
+	public Double getPreco() {
+		return preco;
 	}
 
-	public void setPreço(BigDecimal preço) {
-		this.preço = preço;
+	public void setPreco(Double preco) {
+		this.preco = preco;
 	}
 
 	public String getTipo() {
