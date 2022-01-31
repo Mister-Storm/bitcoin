@@ -1,5 +1,6 @@
 package org.misterstorm.resource;
 
+import javax.annotation.security.PermitAll;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -12,11 +13,12 @@ import org.misterstorm.model.Usuario;
 public class UsuarioRessource {
 	
 	@POST
+	@PermitAll
 	@Transactional
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void inserir(Usuario usuario) {
-		System.out.println(usuario.getPassword());
-		Usuario.persist(usuario);
+		
+		Usuario.adicionar(usuario);
 		
 	}
 
