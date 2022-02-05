@@ -8,24 +8,25 @@ import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.SecurityContext;
 
 import org.misterstorm.model.Ordem;
 import org.misterstorm.repository.OrdemRepository;
+import org.misterstorm.service.OrdemService;
 
 @Path("/ordens")
 public class OrdemRessource {
 
 	@Inject
-	OrdemRepository repository;
+	OrdemService service;
 	
 	@POST
 	@RolesAllowed("user")
 	@Transactional
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void inserir(Ordem ordem) {
-		ordem.setData(LocalDate.now());
-		ordem.setStatus("ENVIADA");
-		repository.persist(ordem);
+	public void inserir(@Context SecurityContext securityContext, Ordem ordem) {
+		service.inserir(securityContext.getUserPrincipal().getName(), ordem);
 	}
 }
