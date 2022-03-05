@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UsuarioTest {
 
     @Test
-    public void testarSeFindByOptionalRetornaOUsuarioCorreto(){
+    void testarSeFindByOptionalRetornaOUsuarioCorreto(){
         PanacheMock.mock(Usuario.class);
         Usuario usuario = new Usuario();
         Optional<PanacheEntityBase> optionalUsuario = Optional.of(usuario);

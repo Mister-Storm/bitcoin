@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import org.misterstorm.model.Usuario;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class UsuarioRessource {
 	@RolesAllowed("admin")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Usuario> listar() {
-		return Usuario.listAll();
+		return PanacheEntityBase.listAll();
 	}
 
 }

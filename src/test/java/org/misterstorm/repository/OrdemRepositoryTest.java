@@ -17,7 +17,7 @@ class OrdemRepositoryTest {
     OrdemRepository repository;
 
     @Test
-    public void testarSeListAllRetornaUsuariosOrdensCorreta() {
+    void testarSeListAllRetornaUsuariosOrdensCorreta() {
 
         Ordem terceiraOrdem = new Ordem();
         List<Ordem> ordens = List.of(new Ordem(), new Ordem(), terceiraOrdem);
